@@ -2,24 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class AIPlayerMovment : MonoBehaviour {
 
     Animator anim;
-
-//    Transform player;
-
-    //public Transform gun;
-
-    //public Transform camera;
-
-    //Vector3 space = new Vector3(0, 2f, -0.4f);
-
-    //Vector3 gunSpace = new Vector3(-0.2f, 0, -0.2f);
 
     void Start()
     {
         anim = GetComponent<Animator>();
-      //  player = GetComponent<Transform>();
+        //  player = GetComponent<Transform>();
     }
 
     public void MoveForward()
@@ -91,39 +81,6 @@ public class PlayerMovement : MonoBehaviour {
         // anim.SetBool("IsJumping", false);
         anim.SetBool("IsIdle", true);
         //gun.position = player.position + gun.position;
-    }
-
-    void FixedUpdate()
-    {
-
-        //camera.position = player.position + space;
-
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
-            MoveForward();
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            MoveBackward();
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            MoveRight();
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            MoveLeft();
-        }
-        else if (Input.GetKey(KeyCode.Space))
-        {
-            Jump();
-        }
-        else
-        {
-            Idle();
-        }
-
-
     }
 
 }
